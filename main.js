@@ -1,26 +1,20 @@
-function twoSum(array, target) {
-    // write the body of the function
-    const result={}
-    //on initialise le résultat comme étant une liste vide  
+var counter = 0;
 
-    
-    for (let i = 0; i < array.length; i++) {
-        const complement = target - array[i];
-        // on cherche la valeur que doit avoir le deuxieme élément que l'on cherche
-        
-        if (result.hasOwnProperty(complement)) {
+function increase() {
+  counter++;
+  updateDisplay(counter);
+}
 
+function decrease() {
+  counter--;
+  updateDisplay(counter);
+}
 
-            return [result[complement], i];
-        };
-        result[array[i]] = i;
-      };
-    
+function reset() {
+  counter = 0;
+  updateDisplay(counter);
+}
 
-    
-//fonction de test
-const test = [12, 18, 58, 45,8, 9];
-const cibletest = 58;
-
-const test = twoSum(test, cibletest);
-print(test)
+function updateDisplay(result) {
+  document.getElementById('display').innerText = counter;
+}
